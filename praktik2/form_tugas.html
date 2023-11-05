@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form HP</title>
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+ <div>
+        <nav style="width: auto; height: auto; background-color: orange; display: flex;">
+            <div style="display: flex; flex-direction: row;"></div>
+     <ul style="display: flex; flex-direction: row; font-size: 20px;">
+                <li style="list-style-type: none; padding-left: 100px;"><a href="#"> Home |</a></li>
+                <li style="list-style-type: none; padding-left: 100px "><a href="#"> Generate Link |</a></li>
+                 <li style="list-style-type: none; padding-left:100px "><a href="#">Transaction History |</a></li>
+                 <li style="list-style-type: none; padding-left:100px "><a href="#">Policy |</a></li>
+                <li style="list-style-type: none; padding-left:100px "><a href="#">Logout |</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <section style="display: flex;  margin-left: 100px; margin-right: 100px; margin-top: 30px;">
+        
+        <div style="padding-right: 50px;">
+            <table>
+                <tr>
+                    <td>
+                        <img src="hp.jpg" alt="" width="300px">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <form action="Hasil_Form_Pemesanan.html">
+            <table>
+                <tr>
+                    <td>Title Here :</td>
+                    <td>
+                        <input type="text" name="Title Here">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description :</td>
+                    <td>
+                        <textarea name="Description" id="" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Account Number :</td>
+                    <td>
+                        <input type="number" name="Total Amount">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bank :</td>
+                    <td>
+                        <select name="bank">
+                                <option value="Pilih Bank">Pilih Bank</option>
+                                <option value="BRI">BRI</option>
+                                <option value="BCA">BCA</option>
+                                <option value="BSI">BSI</option>
+                                <option value="Mandiri">Mandiri</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Account Holder :</td>
+                    <td>
+                        <input type="text" name="namehere">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Transaction :</td>
+                    <td> 
+                        <select name="transaction" id="">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>* if the transaction is for 3 person, choose 3 from the drop-down list</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="1" value="">Send to Mobile Phone
+                        <br>
+                        <input type="checkbox" name="" value="">Send To Email
+                    </td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Send To Mobile Phone :</td>
+                    <td>
+                        <input type="text" name="Mobile Phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Send to Email :</td>
+                    <td>
+                        <input type="email" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="background-color: 
+                        orange; color: white;" type="submit" value="Generate Nabr Link">
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        
+    </section>
+
+
+</body>
+</html>
