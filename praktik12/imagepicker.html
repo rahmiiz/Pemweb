@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <h1>Pilih Gambar</h1>
+
+    <select id="pilihGambar" onchange="tampilkan()">
+        <option value="" disabled selected>Pilih Gambar</option>
+        <option value="images/kucing.jpg">Kucing</option>
+        <option value="images/kupu-kupu.jpg">Kupu-Kupu</option>
+        <option value="images/sapi.jpg">Sapi</option>
+        <option value="images/ular.jpg">Ular</option>
+        <option value="images/kura-kura.jpg">Kura-Kura</option>
+
+    </select>
+
+    <div>
+        <img id="selectimage">
+    </div>
+
+    <script>
+        function tampilkan() {
+            let gambar = document.getElementById("pilihGambar");
+            let image = document.getElementById("selectimage");
+            
+            if (gambar.value === "") {
+                image.src = "";
+                alert("Pilih gambar terlebih dahulu!");
+            } else {
+                let imageName = gambar.options[gambar.selectedIndex].text;
+                image.src = gambar.value;
+                alert("Nama file gambar: " + imageName);
+            }
+        }
+    </script>
+
+</body>
+</html>

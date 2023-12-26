@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Pemesanan</h1>
+        <form id="myForm" onsubmit="validForm(); return false;">
+            <table>
+                <tr>
+                    <td>
+                        <label for="namaPelanggan">Nama Pelanggan:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="namaPelanggan" required>
+                    </td>
+                </tr>
+                    <div id="namaPelangganError" class="error"></div>
+
+                <tr>
+                    <td>
+                        <label for="email">Email:</label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" required>
+                    </td>
+                </tr>
+                    <div id="emailError" class="error"></div>
+
+                <tr>
+                    <td>
+                        <label for="jamKeberangkatan">Jam Keberangkatan:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="jamKeberangkatan" required>
+                    </td>
+                </tr>
+                        <div id="jamKeberangkatanError" class="error"></div>
+
+                <tr>
+                    <td>
+                        <label for="tujuanKeberangkatan">Tujuan Keberangkatan:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="tujuanKeberangkatan" required>
+                    </td>
+                </tr>
+                    <div id="tujuanKeberangkatanError" class="error"></div>
+
+                <tr>
+                    <td>
+                        <label for="jumlahTiket">Jumlah Tiket:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="jumlahTiket" required>
+                    </td>
+                </tr>
+                    <div id="jumlahTiketError" class="error"></div>
+
+        </table>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result" style="display:none;">
+        <h2>Hasil Form Pemesanan :</h2>
+        <p id="NamaPelanggan"></p>
+        <p id="Email"></p>
+        <p id="JamKeberangkatan"></p>
+        <p id="TujuanKeberangkatan"></p>
+        <p id="JumlahTiket"></p>
+    </div>
+
+    <script>
+        function validForm() {
+            resetError();
+
+            let namaPelanggan = document.getElementById("namaPelanggan").value;
+            let email = document.getElementById("email").value;
+            let jamKeberangkatan = document.getElementById("jamKeberangkatan").value;
+            let tujuanKeberangkatan = document.getElementById("tujuanKeberangkatan").value;
+            let jumlahTiket = document.getElementById("jumlahTiket").value;
+
+            let valid = true;
+
+            if (namaPelanggan.trim() === "") {
+                valid = false;
+                document.getElementById("namaPelangganError").innerText = "Nama Pelanggan harus diisi.";
+            }
+
+            let Email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!Email.test(email)) {
+                valid = false;
+                document.getElementById("emailError").innerText = "Format Email tidak valid.";
+            }
+
+            if (jamKeberangkatan.trim() === "") {
+                valid = false;
+                document.getElementById("jamKeberangkatanError").innerText = "Jam Keberangkatan harus diisi.";
+            }
+
+            if (tujuanKeberangkatan.trim() === "") {
+                valid = false;
+                document.getElementById("tujuanKeberangkatanError").innerText = "Tujuan Keberangkatan harus diisi.";
+            }
+
+            if (isNaN(jumlahTiket) || jumlahTiket < 1) {
+                valid = false;
+                document.getElementById("jumlahTiketError").innerText = "Jumlah Tiket harus diisi dengan angka minimal 1.";
+            }
+
+            if (valid) {
+                displayResult(namaPelanggan, email, jamKeberangkatan, tujuanKeberangkatan, jumlahTiket);
+            }
+
+            return valid;
+        }
+
+        function resetError() {
+            let error = document.querySelectorAll('.error');
+            error.forEach(function (element) {
+                element.innerText = '';
+            });
+        }
+
+        function displayResult(namaPelanggan, email, jamKeberangkatan, tujuanKeberangkatan, jumlahTiket) {
+            document.getElementById("NamaPelanggan").innerText = "Nama Pelanggan: " + namaPelanggan;
+            document.getElementById("Email").innerText = "Email: " + email;
+            document.getElementById("JamKeberangkatan").innerText = "Jam Keberangkatan: " + jamKeberangkatan;
+            document.getElementById("TujuanKeberangkatan").innerText = "Tujuan Keberangkatan: " + tujuanKeberangkatan;
+            document.getElementById("JumlahTiket").innerText = "Jumlah Tiket: " + jumlahTiket;
+
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
